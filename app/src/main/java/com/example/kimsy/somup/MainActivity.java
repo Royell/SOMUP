@@ -9,7 +9,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,9 +19,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
-
-        myRef.setValue("Hello, World!");
 
     }
 
@@ -48,10 +44,15 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void signUpUser(String email, String password){
+
+    }
     public void onButton3Clicked(View v){
         //회원가입 버튼 눌렀을 때 menuActivity 띄움
+
         Intent intent = new Intent(this,MenuActivity.class);
         startActivity(intent);
+
     }
 
 }
