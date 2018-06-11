@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     public void onRegisterBtnClicked(View v){
         Intent intent=new Intent(this, MenuActivity.class);
         startActivity(intent);
+
     }
 
 
