@@ -26,7 +26,6 @@ public class logInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
-        DatabaseReference mDatabase;
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference table = database.getReference("sw/students");
         table.addValueEventListener(new ValueEventListener() {
