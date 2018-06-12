@@ -94,19 +94,19 @@
             android:id="@+id/checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="C 프로그래밍" />
+            android:text="C프로그래밍" />
 
         <CheckBox
             android:id="@+id/checkBox2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="C++ 프로그래밍" />
+            android:text="C++프로그래밍" />
 
         <CheckBox
             android:id="@+id/checkBox3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="JAVA 프로그래밍" />
+            android:text="JAVA프로그래밍" />
 
     </LinearLayout>
 
