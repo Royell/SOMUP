@@ -1,6 +1,7 @@
 /***회원가입 화면***/
 package com.example.kimsy.somup;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,8 +13,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MenuActivity extends AppCompatActivity {
 
-    public EditText etEmail;
-    EditText etPassword;
+    public EditText id;
+    public EditText pw;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,16 +26,18 @@ public class MenuActivity extends AppCompatActivity {
 
     public void onBackClicked(View v){
         //fireBase로 데이터 저장하기
-        etEmail=findViewById(R.id.id);
-        String id=etEmail.getText().toString();
-        etPassword=findViewById(R.id.pw);
-        String pw=etPassword.getText().toString();
-        FirebaseDatabase database = FirebaseDatabase. getInstance (); DatabaseReference table = database.getReference("SomupDB/Student");
-        DatabaseReference num1 = table.child("학번");
-        num1.child("ID").setValue(id);
-        num1.child("PASSWORD").setValue(pw);
+        id=findViewById(R.id.id);
+        pw=findViewById(R.id.pw);
+        DatabaseReference mDatabase;
+        mDatabase = FirebaseDatabase.getInstance().getReference("sw");
+        DatabaseReference rDatabase = mDatabase.child("students");
+        Student items = new Student(id.getText().toString(), pw.getText().toString());
+        rDatabase.child(id.getText().toString()).setValue(items);
 
-        //finish();
+        Intent intent=new Intent(this, Menu2Activity.class);
+        startActivity(intent);
+
+        finish();
     }
 
 }

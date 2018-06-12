@@ -18,7 +18,18 @@
         </activity>
         <activity android:name=".MenuActivity" />
         <activity android:name=".logInActivity" />
-        <activity android:name=".Menu2Activity"></activity>
+        <activity android:name=".Menu2Activity" />
+        <activity
+            android:name=".TabActivity"
+            android:label="@string/title_activity_tab"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".StartSelectActivity"></activity>
     </application>
 
 </manifest>

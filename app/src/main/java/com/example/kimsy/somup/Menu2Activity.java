@@ -1,7 +1,7 @@
 package com.example.kimsy.somup;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -32,5 +32,11 @@ public class Menu2Activity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void GoToLogin(View v){
+        Intent intent=new Intent(this, logInActivity.class);
+        startActivity(intent);
+        //finish();
     }
 }
