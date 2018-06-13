@@ -26,6 +26,7 @@ public class logInActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+        DatabaseReference mDatabase;
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference table = database.getReference("sw/students");
         table.addValueEventListener(new ValueEventListener() {
@@ -82,6 +83,7 @@ public class logInActivity extends AppCompatActivity {
                         if(temp.get_password().equals(password)){
                             //아이디-비밀번호가 같은 경우
                             Intent intent= new Intent(getApplicationContext(), StartSelectActivity.class);
+                            intent.putExtra("ID",LOGID);
                             startActivity(intent);
 
                         }else{

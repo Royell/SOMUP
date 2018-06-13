@@ -10,7 +10,10 @@ public class Student {
     public ArrayList<String> subject;
 
     public Student() {
-
+        this._id = null;
+        this._password = null;
+        this._name = null;
+        this._num = -1;
     }
 
     public Student(String id, String password,String name,int num) {
